@@ -1,0 +1,18 @@
+name: My First GitHub Pipeline
+
+# Trigger: run pipeline when we push to main branch
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - uses: actions/checkout@v3
+      
+      # Step 2: Run commands
+      - name: Say Hello
+        run: echo "Hello, GitHub Actions! This is my first pipeline."
